@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+
+    <style name="Base.Theme.Jokenpo" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorOne</item>
+        <item name="colorPrimaryDark">@color/colorOne</item>
+        <item name="colorContainer">@color/colorOneDark</item>
+        <item name="colorSecondary">@color/colorSec</item>
+
+        <item name="android:textColorSecondary">@color/colorSec</item>
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.Jokenpo" parent="Base.Theme.Jokenpo" />
+    <style name="Theme.Jokenpo.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+    </style>
+</resources>
