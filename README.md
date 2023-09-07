@@ -1,2 +1,2 @@
 # Jokenpo
-Jokenpo game
+Jokenpo game by filipe
