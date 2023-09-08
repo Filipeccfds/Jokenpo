@@ -46,6 +46,9 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
     implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
 
+    val lifecylce_version = "2.4.0"
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecylce_version")
+    implementation("androidx.lifecycle:lifecycle-common-java8:$lifecylce_version")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")

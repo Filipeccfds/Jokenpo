@@ -26,9 +26,11 @@ class PlayerFragment : Fragment() {
         val binding = FragmentPlayerBinding.inflate(inflater, container, false)
 
         setHasOptionsMenu(true)
-
+        lifecycle.addObserver(Obsever())
         return binding.root
     }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_settings, menu)

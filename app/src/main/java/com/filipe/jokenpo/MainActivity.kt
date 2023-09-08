@@ -2,7 +2,9 @@ package com.filipe.jokenpo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.View
+import android.widget.EditText
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.NavHost
@@ -22,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var navBottomNavigationView: BottomNavigationView
     lateinit var appBarConfiguration: AppBarConfiguration
     lateinit var navController: NavController
+    lateinit var editText: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +35,11 @@ class MainActivity : AppCompatActivity() {
         navigationView = binding.navView
         drawerLayout = binding.root
         navBottomNavigationView = binding.bottomNavigationView
+        editText = binding.editTextText
+
+        savedInstanceState?.getString("editTextValue")?.let {
+            editText.setText(it)
+        }
 
         val navHomeFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
@@ -42,13 +50,21 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener{_,destination,_ ->
             when(destination.id){
                 R.id.homeFragment  -> navBottomNavigationView.visibility = View.GONE
-                else -> navBottomNavigationView.visibility = View.VISIBLE
+                else -> {
+                    navBottomNavigationView.visibility = View.VISIBLE
+                }
             }
         }
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navigationView.setupWithNavController(navController)
         navBottomNavigationView.setupWithNavController(navController)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+        super.onSaveInstanceState(outState, outPersistentState)
+
+        outState.putString("editTextValue",editText.text.toString())
     }
 
     override fun onSupportNavigateUp(): Boolean {

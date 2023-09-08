@@ -22,8 +22,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(action)
         }
 
+        lifecycle.addObserver(Obsever())
         return binding.root
     }
+
 
 
 
