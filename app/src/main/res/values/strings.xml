@@ -10,4 +10,10 @@
     <string name="bemvindo">Bem Vindo ao Jokenpo</string>
     <string name="selecionar">Selecionar Jogada</string>
     <string name="voltar">Reiniciar</string>
+
+    <string-array name="stringSpiner">
+        <item>Pedra</item>
+        <item>Papel</item>
+        <item>Tesoura</item>
+    </string-array>
 </resources>
