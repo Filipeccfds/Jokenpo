@@ -61,17 +61,19 @@ class MainActivity : AppCompatActivity(),AdapterView.OnItemSelectedListener {
             }
             true
         }
+        navBottomNavigationView.setupWithNavController(navController)
         navBottomNavigationView.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.resultFragment ->{
                     val args = Bundle()
                     args.putString("currentPlay",currentPlay)
                     navController.navigate(it.itemId, args)
-                }else -> navController.navigate(it.itemId)
+                }
+                else -> navController.navigate(it.itemId)
             }
             true
         }
-        navBottomNavigationView.setupWithNavController(navController)
+
 
     }
 

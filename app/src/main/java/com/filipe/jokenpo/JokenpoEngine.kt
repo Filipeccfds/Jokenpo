@@ -14,10 +14,10 @@ class JokenpoEngine(private val avaliablePlays:Array<String>) {
 
         return when{
             playerPlay == aiPlay -> Result.DRAW
-            playerPlay =="Pedra" && aiPlay =="Papel" -> Result.LOSS
             playerPlay =="Pedra" && aiPlay =="Tesoura" -> Result.WIN
-            playerPlay =="Papel" && aiPlay =="Tesoura" -> Result.LOSS
+            playerPlay =="Pedra" && aiPlay =="Papel" -> Result.LOSS
             playerPlay =="Papel" && aiPlay =="Pedra" -> Result.WIN
+            playerPlay =="Papel" && aiPlay =="Tesoura" -> Result.LOSS
             playerPlay =="Tesoura" && aiPlay =="Papel" -> Result.WIN
             else -> Result.LOSS
         }
